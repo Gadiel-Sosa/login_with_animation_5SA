@@ -20,21 +20,33 @@ class _LoginScreenState extends State<LoginScreen> {
   SMITrigger? trigFail;
   SMITrigger? trigSuccess;
 
+  // Focos email y password FocusNode
+  final emailFocus = FocusNode();
+  final passwordFocus = FocusNode();
+  // Listeners oyentes
+
   @override
   void initState() {
     super.initState();
     _userPasswordController = TextEditingController();
     _passwordVisible = false;
+    emailFocus.addListener((){
+      if (emailFocus.hasFocus) {
+      isHandsUp?.change(false); //manos abajo email
+    }
+    });
+    passwordFocus.addListener((){
+      isHandsUp?.change(passwordFocus.hasFocus); //manos arriba password
+    });
+    
   }
 
-  @override
-  void dispose() {
-    _userPasswordController.dispose();
-    super.dispose();
-  }
+  
 
   @override
   Widget build(BuildContext context) {
+
+
     // Consulta el tamaño de la pantalla
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
@@ -67,15 +79,20 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 10),
               // Campo de texto email
               TextField(
+                // llamado a los oyentes
+                focusNode: emailFocus,
                 onChanged: (value) {
                   if (isHandsUp != null) {
                     // No tapar los ojos al escribir mail
-                    isHandsUp!.change(false);
+                    //isHandsUp!.change(false);
                   }
                   if (isCheking == null) return;
                   // Activa el modo chismoso
+
                   isCheking!.change(true);
                 },
+                textInputAction: TextInputAction.next,
+
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
@@ -89,10 +106,11 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 10),
               // Campo de texto password
               TextField(
+                focusNode: passwordFocus,
                 onChanged: (value) {
                   if (isCheking != null) {
                     // No tapar los ojos al escribir mail
-                    isHandsUp!.change(false);
+                    //isHandsUp!.change(false);
                   }
                   if (isHandsUp == null) return;
                   // Activa el modo chismoso
@@ -174,4 +192,14 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
+
+@override
+  void dispose() {
+    _userPasswordController.dispose();
+    emailFocus.dispose();
+    passwordFocus.dispose();
+    super.dispose();
+  }
 }
+
