@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
+// 2.3 implementar librería timer
+import 'dart:async';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -19,10 +21,14 @@ class _LoginScreenState extends State<LoginScreen> {
   SMIBool? isHandsUp;
   SMITrigger? trigFail;
   SMITrigger? trigSuccess;
+  // 2.1 Variable de recorrido de la mirada
+  SMINumber? numLook;
 
-  // Focos email y password FocusNode
+  // Focos email y password FocusNode paso 1.1
   final emailFocus = FocusNode();
   final passwordFocus = FocusNode();
+  // 3.2 Crear timer para detener la animación al dejar de teclear email
+  Timer? _typingDebouncer;
   // Listeners oyentes
 
   @override
@@ -30,23 +36,21 @@ class _LoginScreenState extends State<LoginScreen> {
     super.initState();
     _userPasswordController = TextEditingController();
     _passwordVisible = false;
-    emailFocus.addListener((){
+    emailFocus.addListener(() {
       if (emailFocus.hasFocus) {
-      isHandsUp?.change(false); //manos abajo email
-    }
+        isHandsUp?.change(false); //manos abajo email
+        // Mirada neutral al enfocar email
+        numLook?.value = 50.0;
+        isHandsUp?.change(false); //manos abajo email
+      }
     });
-    passwordFocus.addListener((){
+    passwordFocus.addListener(() {
       isHandsUp?.change(passwordFocus.hasFocus); //manos arriba password
     });
-    
   }
-
-  
 
   @override
   Widget build(BuildContext context) {
-
-
     // Consulta el tamaño de la pantalla
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
@@ -73,7 +77,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     isHandsUp = controller!.findSMI('isHandsUp');
                     trigSuccess = controller!.findSMI('trigSuccess');
                     trigFail = controller!.findSMI('trigFail');
-                  },
+                    // paso 2.3 enlazar la variable con la animación
+                    numLook = controller!.findSMI('numLook');
+                  }, // Qué es clamp?? en programación y en la vida
+                  // clamp: abrazadera retiene el valor dentro de un rango
                 ),
               ),
               const SizedBox(height: 10),
@@ -83,9 +90,25 @@ class _LoginScreenState extends State<LoginScreen> {
                 focusNode: emailFocus,
                 onChanged: (value) {
                   if (isHandsUp != null) {
-                    // No tapar los ojos al escribir mail
-                    //isHandsUp!.change(false);
+                    // estoy escribiendo
+                    isCheking!.change(true);
+                    // ajuste de limite 0 a 100
+                    // 80 es medida de calibración
+                    final look =
+                        (value.length / 80.0 * 100.0).clamp(0, 100).toDouble();
+                    numLook?.value = look;
+                    // Paso 3.3 Debounce: si vuelve a teclear, reinicia el timer
+                    _typingDebouncer?.cancel(); // cancela un timer existente
+                    _typingDebouncer = Timer(const Duration(seconds: 4), () {
+                      if (!mounted) {
+                        return; // si la pantalla se cierra
+                      } 
+
+                      // Mirada neutral al dejar de teclear email
+                      isCheking?.change(false);
+                    });
                   }
+
                   if (isCheking == null) return;
                   // Activa el modo chismoso
 
@@ -193,13 +216,12 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-
-@override
+  @override
   void dispose() {
     _userPasswordController.dispose();
     emailFocus.dispose();
     passwordFocus.dispose();
+    _typingDebouncer?.cancel();
     super.dispose();
   }
 }
-
