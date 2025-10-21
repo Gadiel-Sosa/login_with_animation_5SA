@@ -18,11 +18,20 @@ La animación está protagonizada por un oso que reacciona en tiempo real a las 
 En Rive, un State Machine (máquina de estados) controla las diferentes animaciones y transiciones según las condiciones o eventos definidos en el código.
 En este proyecto se usa el State Machine llamado "Login Machine", el cual maneja las animaciones del oso durante el proceso de inicio de sesión.</p>
 
-<h2 align="center"> 💻 Tecnologías utilizadas</h2>
+<h2 align="center">💻 Technologies Used</h2>
 
-- Flutter
-- Dart
-- Rive
+<p align="center">
+  <a href="https://flutter.dev/" target="_blank">
+    <img src="https://img.shields.io/badge/Flutter-02569B?logo=flutter&logoColor=white&style=for-the-badge" alt="Flutter Badge"/>
+  </a>
+  <a href="https://dart.dev/" target="_blank">
+    <img src="https://img.shields.io/badge/Dart-0175C2?logo=dart&logoColor=white&style=for-the-badge" alt="Dart Badge"/>
+  </a>
+  <a href="https://rive.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Rive-000000?logo=rive&logoColor=white&style=for-the-badge" alt="Rive Badge"/>
+  </a>
+</p>
+
 
 <h2 align="center"> 🧩 Estructura básica del proyecto</h2>
 
