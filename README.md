@@ -57,29 +57,16 @@ assets/
 </pre>
 
 ---
-
 <h2 align="center">🎥 Demo</h2>
 
-<p align="center">
-  <img src="https://i.postimg.cc/02fM48yb/Email-bear-animated.gif" 
-       alt="Login demo" 
-       width="420" 
-       style="border-radius:10px;"/>
-</p>
+<div align="center">
+  <img src="https://i.postimg.cc/02fM48yb/Email-bear-animated.gif" width="23%">
+  <img src="https://i.postimg.cc/c1Tdy6f8/Password-bear-animated-Hechocon-Clipchamp-ezgif-com-video-to-gif-converter.gif" width="23%">
+  <img src="https://i.postimg.cc/Jhdd5VXD/Success-bear-animated-Hechocon-Clipchamp-ezgif-com-video-to-gif-converter.gif" width="23%">
+  <img src="https://i.postimg.cc/13Xdn3gj/Error-login-bear-animated-Hechocon-Clipchamp-ezgif-com-video-to-gif-converter.gif" width="23%">
+</div>
 
-<p align="center">
-  <img src="https://i.postimg.cc/c1Tdy6f8/Password-bear-animated-Hechocon-Clipchamp-ezgif-com-video-to-gif-converter.gif" 
-       alt="Login demo" 
-       width="420" 
-       style="border-radius:10px;"/>
-</p>
 
-<p align="center">
-  <img src="https://i.postimg.cc/Jhdd5VXD/Success-bear-animated-Hechocon-Clipchamp-ezgif-com-video-to-gif-converter.gif" 
-       alt="Login demo" 
-       width="420" 
-       style="border-radius:10px;"/>
-</p>
 
 ---
 
