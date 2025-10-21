@@ -1,22 +1,32 @@
 <h1 align="center">🧸 login_with_animation</h1>
 
-<h2 align="center"> 📝 Short Description</h2>
+<p align="center">
+  <i>A Flutter login screen featuring an interactive Rive bear animation 🐻</i>
+</p>
 
-<p align="justify"> login_with_animation es una aplicación desarrollada en Flutter que muestra una pantalla de inicio de sesión animada utilizando Rive.
-La animación está protagonizada por un oso que reacciona en tiempo real a las acciones del usuario, haciendo del proceso de inicio de sesión una experiencia divertida e interactiva.</p>
+---
 
-<h2 align="center"> ⚙️ Funcionalidades principales</h2>
+## 📝 Short Description
+**login_with_animation** is a Flutter application that presents an animated login screen using **Rive**.  
+The animation features a bear that reacts in real time to user actions, turning the login process into a fun and engaging experience.
 
-- 🐻 El oso sigue con la mirada mientras el usuario escribe su correo electrónico.
-- 🙈 Al escribir la contraseña, el oso se cubre los ojos.
-- ✅ Si el correo y la contraseña cumplen con las validaciones (regex para el correo y una contraseña con al menos 8 caracteres, una mayúscula, un número y un carácter especial), se muestra una animación de éxito.
-- ❌ En caso contrario, se reproduce una animación de fallo.
+---
 
-<h2 align="center"> 🎨 ¿Qué es Rive y qué es un State Machine?</h2>
+## ⚙️ Main Features
+- 🐻 The bear **follows the user’s typing** while entering the email.  
+- 🙈 When typing the password, the bear **covers its eyes**.  
+- ✅ If both the email and password meet the validation criteria (email regex, and password with at least 8 characters, one uppercase, one number, and one special symbol), a **success animation** plays.  
+- ❌ Otherwise, a **failure animation** is displayed.
 
-<p align="justify"> Rive es una herramienta para crear animaciones interactivas que pueden reaccionar a la lógica del programa en tiempo real.
-En Rive, un State Machine (máquina de estados) controla las diferentes animaciones y transiciones según las condiciones o eventos definidos en el código.
-En este proyecto se usa el State Machine llamado "Login Machine", el cual maneja las animaciones del oso durante el proceso de inicio de sesión.</p>
+---
+
+## 🎨 What is Rive and What is a State Machine?
+**Rive** is a powerful tool for creating real-time, interactive animations that respond to app logic.  
+A **State Machine** in Rive controls transitions between animations based on logic and input events.  
+
+In this project, the State Machine **"Login Machine"** manages the bear’s animations and reactions throughout the login process.
+
+---
 
 <h2 align="center">💻 Technologies Used</h2>
 
@@ -33,7 +43,8 @@ En este proyecto se usa el State Machine llamado "Login Machine", el cual maneja
 </p>
 
 
-<h2 align="center"> 🧩 Estructura básica del proyecto</h2>
+
+<h2 align="center">🧩 Project Structure</h2>
 
 <pre>
 lib/
@@ -45,30 +56,46 @@ assets/
 └── animated_login_character.riv
 </pre>
 
-<h2 align="center"> 🎥 Demo del funcionamiento</h2>
+---
+
+<h2 align="center">🎥 Demo</h2>
 
 <p align="center">
   <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDNpdndvOHZ1aXo2eW1jcm9nNjgyemFjcHRnbXliajd6eG9ob3ZraiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ie4CIIvQS0bk3zwZlM/giphy.gif" 
        alt="Login demo" 
-       width="400"/>
+       width="420" 
+       style="border-radius:10px;"/>
 </p>
 
-<h2 align="center"> 🎓 Academic Information</h2>
+---
 
-- Subject: Graficación
-- Instructor: Rodrigo Fidel Gaxiola Sosa
+<h2 align="center">🎓 Academic Information</h2>
 
-<h3>🙌 Credits</h3>
+<p align="center">
+  <b>Subject:</b> Graficación <br>
+  <b>Instructor:</b> Rodrigo Fidel Gaxiola Sosa
+</p>
 
-<p>
+---
+
+<h2 align="center">🙌 Credits</h2>
+
+<p align="center">
   Original animation: 
   <a href="https://rive.app/marketplace/3645-7621-remix-of-login-machine/" target="_blank">
     <b>Remix of Login Machine</b>
   </a><br>
   Created and published on 
   <a href="https://rive.app/marketplace/" target="_blank">
-    Rive Marketplace
+    <b>Rive Marketplace</b>
   </a>.
 </p>
+
+---
+
+<p align="center">
+  <b>✨ Made with Flutter, Dart & Rive ✨</b>
+</p>
+
 
 
