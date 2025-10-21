@@ -61,7 +61,21 @@ assets/
 <h2 align="center">🎥 Demo</h2>
 
 <p align="center">
-  <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDNpdndvOHZ1aXo2eW1jcm9nNjgyemFjcHRnbXliajd6eG9ob3ZraiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Ie4CIIvQS0bk3zwZlM/giphy.gif" 
+  <img src="https://i.postimg.cc/02fM48yb/Email-bear-animated.gif" 
+       alt="Login demo" 
+       width="420" 
+       style="border-radius:10px;"/>
+</p>
+
+<p align="center">
+  <img src="https://i.postimg.cc/c1Tdy6f8/Password-bear-animated-Hechocon-Clipchamp-ezgif-com-video-to-gif-converter.gif" 
+       alt="Login demo" 
+       width="420" 
+       style="border-radius:10px;"/>
+</p>
+
+<p align="center">
+  <img src="https://i.postimg.cc/Jhdd5VXD/Success-bear-animated-Hechocon-Clipchamp-ezgif-com-video-to-gif-converter.gif" 
        alt="Login demo" 
        width="420" 
        style="border-radius:10px;"/>
